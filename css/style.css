@@ -119,6 +119,7 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     transition: transform 0.2s ease;
+    max-width: 200px;
   }
   .album-card:hover {
     transform: scale(1.05);
@@ -183,4 +184,52 @@
     margin: 0;
     font-size: 0.85rem;
     color: #aaa;
+  }
+
+  /* About page */
+  .about-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  }
+  .about-container img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  .about-container h1 {
+    text-align: center;
+  }
+
+  /* Support donate */
+  .support-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  }
+  .support-container h1 {
+    margin-bottom: 1rem;
+  }
+  .support-container p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .platform-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .platform-icons a img {
+    width: 48px;
+    height: 48px;
   }
