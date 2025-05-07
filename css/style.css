@@ -1,0 +1,186 @@
+  body {
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  nav {
+    background-color: #222;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  nav a {
+    color: #fa4a1d;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  a {
+    color: #fa4a1d;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Cinzel', serif; 
+    font-size: 1.5rem
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif; 
+    font-size: 2.5rem
+  }
+
+  p {
+    font-family: 'Cinzel', serif; 
+    font-size: 1.5rem
+  }
+
+  .map-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Map CSS */
+  .marker-wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .marker {
+    width: 12px;
+    height: 12px;
+    background-color: #fa4a1d;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: width 0.2s ease, height 0.2s ease;
+    display: block;
+  }
+  .marker:hover {
+    width: 20px;
+    height: 20px;
+  }
+  .preview {
+    display: none;
+    position: absolute;
+    top: -140px;
+    left: 20px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    background-color: #111;
+    z-index: 1000;
+  }
+  .preview img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #444;
+  }
+  .preview p {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .marker-wrapper:hover .preview {
+    display: block;
+  }
+  footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+  }
+
+  /* List of Albums CSS */
+  .album-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .album-card {
+    background-color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+  }
+  .album-card:hover {
+    transform: scale(1.05);
+  }
+  .album-card img {
+    width: 100%;
+    display: block;
+  }
+  .album-card h3 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  /* Album CSS */
+  .album-cover {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    border: 2px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .album-description {
+    max-width: 800px;
+    margin: 2rem auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .song-list {
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  .song-item {
+    background-color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+  }
+  .song-item:hover {
+    transform: scale(1.02);
+  }
+  .song-item img {
+    width: 143px;
+    height: 80px;
+    object-fit: cover;
+    border-right: 1px solid #444;
+  }
+  .song-info {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    flex: 1;
+  }
+  .song-info h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .song-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #aaa;
+  }

@@ -5,99 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mytholore - The Myths Behind the Music</title>
-  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  
-  <style>
-    body {
-      background-color: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
-    }
-    nav {
-      background-color: #222;
-      padding: 1rem;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      color: #fa4a1d;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .map-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 2rem auto;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .marker-wrapper {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
-    .marker {
-      width: 12px;
-      height: 12px;
-      background-color: #fa4a1d;
-      border-radius: 50%;
-      border: 2px solid white;
-      cursor: pointer;
-      transition: width 0.2s ease, height 0.2s ease;
-      display: block;
-    }
-    .marker:hover {
-      width: 20px;
-      height: 20px;
-    }
-    .preview {
-      display: none;
-      position: absolute;
-      top: -140px;
-      left: 20px;
-      width: 300px;
-      border: 2px solid white;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.5);
-      background-color: #111;
-      z-index: 1000;
-    }
-    .preview img {
-      width: 100%;
-      display: block;
-      border-bottom: 1px solid #444;
-    }
-    .preview p {
-      margin: 0;
-      padding: 0.5rem;
-      font-size: 0.8rem;
-    }
-    .marker-wrapper:hover .preview {
-      display: block;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">  
 </head>
 
 <body>
   <img src="images/mytholore_logo.svg" style="width: 400px; height: 150px; display: block; margin: 0 auto;">
   <nav>
-    <a href="index.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">World Map</a>
-    <a href="albums.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">Albums</a>
-    <a href="about.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">About</a>
+    <a href="index.html">World Map</a>
+    <a href="albums.html">Albums</a>
+    <a href="about.html">About</a>
+    <a href="donate.html">Donate</a>
   </nav>
 
   <div class="map-container">
@@ -126,7 +44,7 @@
   </div>
 
   <footer>
-    <p style="font-family: 'Cinzel', serif; font-size: 1.5rem">
+    <p>
       Listen on all platforms via
       <a href="https://distrokid.com/hyperfollow/mytholore/enuma-elish" target="_blank">
         <img src="images/streaming_link.jpg" style="width: 300px; height: 90px; display: block; margin: 0 auto;" />
@@ -168,7 +86,7 @@
 
         previewBox.querySelector('img').src = previews[type].image;
         previewBox.querySelector('p').textContent = previews[type].text;
-        previewBox.querySelector('p').style = "font-family: 'Cinzel', serif; font-size: 1.5rem";
+        previewBox.querySelector('p').style = "font-size: 1.5rem";
 
         previewBox.style.left = (rect.left - containerRect.left + 20) + 'px';
         previewBox.style.top = (rect.top - containerRect.top - 10) + 'px';
