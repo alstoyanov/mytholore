@@ -1,61 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mytholore - Epic Metal Legends</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-black text-gray-300">
-    <header class="text-center py-10 bg-gray-900 shadow-md">
-        <h1 class="text-5xl font-extrabold text-red-600">Mytholore</h1>
-        <p class="text-lg mt-2">Metal forged in the fires of ancient myths</p>
-    </header>
-    
-    <section class="text-center py-16 px-6">
-        <h2 class="text-3xl font-bold text-red-500">About Us</h2>
-        <p class="mt-4 max-w-3xl mx-auto">
-            Mytholore blends thunderous riffs with legendary tales from mythology. Each song tells a story of gods, battles, and epic journeys.
-        </p>
-    </section>
-    
-    <section class="py-16 bg-gray-800 px-6">
-        <h2 class="text-3xl font-bold text-center text-red-500">Featured Songs</h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-6">
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg w-80">
-                <h3 class="text-xl font-semibold text-red-400">Wrath of Odin</h3>
-                <p class="mt-2">A thunderous anthem recounting the fury of the Allfather in battle.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg w-80">
-                <h3 class="text-xl font-semibold text-red-400">The Fall of Troy</h3>
-                <p class="mt-2">Heavy riffs and soaring vocals tell the tragic tale of Troy's demise.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg w-80">
-                <h3 class="text-xl font-semibold text-red-400">Hades' Reign</h3>
-                <p class="mt-2">A dark and intense journey into the underworld of the Greek god Hades.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="py-16 px-6">
-        <h2 class="text-3xl font-bold text-center text-red-500">Upcoming Tour Dates</h2>
-        <ul class="mt-6 max-w-2xl mx-auto text-center">
-            <li class="bg-gray-900 p-4 my-2 rounded-lg">March 15 - Valhalla Rock Fest</li>
-            <li class="bg-gray-900 p-4 my-2 rounded-lg">April 20 - Underworld Metal Arena</li>
-            <li class="bg-gray-900 p-4 my-2 rounded-lg">May 5 - Olympus Thunder Festival</li>
-        </ul>
-    </section>
 
-    <section class="py-16 bg-gray-800 px-6 text-center">
-        <h2 class="text-3xl font-bold text-red-500">Latest Music Video</h2>
-        <div class="mt-6 flex justify-center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xDQF380xC7U" title="The Mead and the Maiden" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-    
-    <footer class="text-center py-6 bg-gray-900 mt-16">
-        <p>&copy; 2025 Mytholore. All rights reserved.</p>
-        <p>Follow us on <a href="#" class="text-red-400">Instagram</a> | <a href="#" class="text-red-400">Spotify</a></p>
-    </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mytholore - The Myths Behind the Music</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    nav {
+      background-color: #222;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    nav a {
+      color: #fa4a1d;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .map-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .marker-wrapper {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+    .marker {
+      width: 12px;
+      height: 12px;
+      background-color: #fa4a1d;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: width 0.2s ease, height 0.2s ease;
+      display: block;
+    }
+    .marker:hover {
+      width: 20px;
+      height: 20px;
+    }
+    .preview {
+      display: none;
+      position: absolute;
+      top: -140px;
+      left: 20px;
+      width: 300px;
+      border: 2px solid white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+      background-color: #111;
+      z-index: 1000;
+    }
+    .preview img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #444;
+    }
+    .preview p {
+      margin: 0;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+    .marker-wrapper:hover .preview {
+      display: block;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="images/mytholore_logo.svg" style="width: 400px; height: 150px; display: block; margin: 0 auto;">
+  <nav>
+    <a href="index.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">World Map</a>
+    <a href="albums.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">Albums</a>
+    <a href="about.html" style="font-family: 'Cinzel', serif; font-size: 1.5rem">About</a>
+  </nav>
+
+  <div class="map-container">
+    <img src="images/world-map.jpg" alt="Mythology Map">
+
+    <div class="marker-wrapper" style="top: 32%; left: 57%;">
+      <a href="mythologies/greece/index.html" class="marker" data-preview="greek"></a>
+    </div>
+    <div class="marker-wrapper" style="top: 20%; left: 55%;">
+      <a href="mythologies/norse/index.html" class="marker" data-preview="norse"></a>
+    </div>
+    <div class="marker-wrapper" style="top: 35%; left: 63%;">
+      <a href="mythologies/persian/index.html" class="marker" data-preview="persian"></a>
+    </div>
+    <div class="marker-wrapper" style="top: 42%; left: 70%;">
+      <a href="mythologies/indian/index.html" class="marker" data-preview="indian"></a>
+    </div>
+    <div class="marker-wrapper" style="top: 38%; left: 58%;">
+      <a href="mythologies/egyptian/index.html" class="marker" data-preview="egyptian"></a>
+    </div>
+
+    <div class="preview" id="preview-box">
+      <img src="" alt="">
+      <p></p>
+    </div>
+  </div>
+
+  <footer>
+    <p style="font-family: 'Cinzel', serif; font-size: 1.5rem">
+      Listen on all platforms via
+      <a href="https://distrokid.com/hyperfollow/mytholore/enuma-elish" target="_blank">
+        <img src="images/streaming_link.jpg" style="width: 300px; height: 90px; display: block; margin: 0 auto;" />
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const previews = {
+      greek: {
+        image: 'images/greek-preview.jpg',
+        text: 'Greek Mythology'
+      },
+      norse: {
+        image: 'images/norse-preview.jpg',
+        text: 'Norse Mythology'
+      },
+      persian: {
+        image: 'images/persian-preview.jpg',
+        text: 'Persian Mythology'
+      },
+      indian: {
+        image: 'images/indian-preview.jpg',
+        text: 'Indian Mythology'
+      },
+      egyptian: {
+        image: 'images/egyptian-preview.jpg',
+        text: 'Egyptian Mythology'
+      }
+    };
+
+    const previewBox = document.getElementById('preview-box');
+
+    document.querySelectorAll('.marker').forEach(marker => {
+      const type = marker.getAttribute('data-preview');
+      marker.addEventListener('mouseenter', (e) => {
+        const rect = marker.getBoundingClientRect();
+        const containerRect = document.querySelector('.map-container').getBoundingClientRect();
+
+        previewBox.querySelector('img').src = previews[type].image;
+        previewBox.querySelector('p').textContent = previews[type].text;
+        previewBox.querySelector('p').style = "font-family: 'Cinzel', serif; font-size: 1.5rem";
+
+        previewBox.style.left = (rect.left - containerRect.left + 20) + 'px';
+        previewBox.style.top = (rect.top - containerRect.top - 10) + 'px';
+        previewBox.style.display = 'block';
+      });
+
+      marker.addEventListener('mouseleave', () => {
+        previewBox.style.display = 'none';
+      });
+    });
+  </script>
+  
 </body>
 </html>
