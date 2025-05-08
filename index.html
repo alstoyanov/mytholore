@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mytholore - The Myths Behind the Music</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    if (window.innerWidth <= 768) {
+      window.location.href = "index-mobile.html";
+    }
+  </script>
 </head>
 
 <body>
@@ -56,7 +61,7 @@
   </div>
 
   <footer>
-    <p>
+    <p style="font-size: 1.5rem">
       Listen on all platforms via
       <a href="https://distrokid.com/hyperfollow/mytholore/enuma-elish" target="_blank">
         <img src="images/streaming_link.jpg" style="width: 300px; height: 90px; display: block; margin: 0 auto;" />
@@ -91,11 +96,11 @@
         text: 'African Mythology'
       },
       celtic: {
-        image: 'images/africa-preview.jpg',
+        image: 'images/celtic-preview.jpg',
         text: 'Celtic Mythology'
       },
       rome: {
-        image: 'images/africa-preview.jpg',
+        image: 'images/rome-preview.jpg',
         text: 'Roman Mythology'
       },
       mesopotamia: {

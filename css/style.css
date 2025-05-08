@@ -41,7 +41,7 @@
 
   p {
     font-family: 'Cinzel', serif; 
-    font-size: 1.5rem
+    font-size: 1rem
   }
 
   .map-container {
@@ -103,6 +103,35 @@
   footer {
     margin-top: 3rem;
     font-size: 0.9rem;
+  }
+  /* Mythology list */
+  .mythology-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .mythology-card {
+    background-color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .mythology-card:hover {
+    transform: scale(1.05);
+  }
+  .mythology-card img {
+    width: 100%;
+    display: block;
+  }
+  .mythology-card h3 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
 
   /* List of Albums CSS */
