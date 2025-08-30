@@ -1,0 +1,370 @@
+{
+  "mythologies": {
+    "egyptian": {
+      "name": "Egyptian Mythology",
+      "albums": {
+        "divine_struggle": {
+          "name": "The Divine Struggle",
+          "questions": [
+            {
+              "id": "eg_ds_1",
+              "question": "Which Egyptian god is celebrated in the song 'Golden Age' for bringing wisdom, balance, and divine rule to Egypt?",
+              "options": ["Ra", "Osiris", "Anubis", "Horus"],
+              "correct": 1,
+              "hint": "From 'The Divine Struggle' album - Golden Age",
+              "explanation": "Osiris reigned during Egypt's golden age, bringing wisdom, balance, and divine rule to the land."
+            },
+            {
+              "id": "eg_ds_2",
+              "question": "According to the lyrics of 'Golden Age', what flows freely during Osiris's prosperous reign?",
+              "options": ["The Nile", "Wine", "Gold", "Time"],
+              "correct": 0,
+              "hint": "From 'The Divine Struggle' album - Golden Age",
+              "explanation": "The song mentions 'Through golden fields where the river flows' and 'where the Nile flows freely'."
+            },
+            {
+              "id": "eg_ds_3",
+              "question": "In 'Golden Age', what whispers through the breeze during Osiris's peaceful reign?",
+              "options": ["Secrets", "Justice", "Love", "War"],
+              "correct": 1,
+              "hint": "From 'The Divine Struggle' album - Golden Age",
+              "explanation": "The lyrics state 'Justice whispers through the breeze, A world at peace, a land at ease.'"
+            },
+            {
+              "id": "eg_ds_4",
+              "question": "What does the song 'Golden Age' suggest is coming despite the current prosperity?",
+              "options": ["More prosperity", "A celebration", "A storm/darkness", "New temples"],
+              "correct": 2,
+              "hint": "From 'The Divine Struggle' album - Golden Age",
+              "explanation": "The song mentions 'But even in paradise, the winds of fate whisper of a coming storm' and 'Before the night begins to fall'."
+            }
+          ]
+        }
+      }
+    },
+    "indian": {
+      "name": "Indian Mythology",
+      "albums": {
+        "mahabarata": {
+          "name": "Mahabharata",
+          "questions": [
+            {
+              "id": "in_mb_1",
+              "question": "In 'The Curse of King Shantanu', who is the celestial river goddess that King Shantanu falls in love with?",
+              "options": ["Saraswati", "Ganga", "Yamuna", "Kaveri"],
+              "correct": 1,
+              "hint": "From 'Mahabharata' album - The Curse of King Shantanu",
+              "explanation": "Ganga, the celestial river goddess, marries King Shantanu under specific conditions."
+            },
+            {
+              "id": "in_mb_2",
+              "question": "What condition does Ganga set for marrying King Shantanu?",
+              "options": ["He must build her a temple", "He must never question her actions", "He must give up his kingdom", "He must worship only her"],
+              "correct": 1,
+              "hint": "From 'Mahabharata' album - The Curse of King Shantanu",
+              "explanation": "Ganga agrees to marry Shantanu only if he never questions her actions."
+            },
+            {
+              "id": "in_mb_3",
+              "question": "What tragic action does Ganga perform with their newborn sons?",
+              "options": ["Abandons them", "Drowns them in the river", "Gives them away", "Hides them"],
+              "correct": 1,
+              "hint": "From 'Mahabharata' album - The Curse of King Shantanu",
+              "explanation": "One by one, Ganga drowns their newborn sons in the river, which is part of their celestial curse."
+            },
+            {
+              "id": "in_mb_4",
+              "question": "What is the name of the eighth child who survives and later becomes a legendary warrior?",
+              "options": ["Arjuna", "Devavrata (Bhishma)", "Krishna", "Karna"],
+              "correct": 1,
+              "hint": "From 'Mahabharata' album - The Curse of King Shantanu",
+              "explanation": "Devavrata, later known as Bhishma, is the eighth child who survives and becomes one of the most legendary warriors."
+            },
+            {
+              "id": "in_mb_5",
+              "question": "Why did Ganga drown her own children according to the legend?",
+              "options": ["She was evil", "They were cursed celestial beings who needed to be freed", "She didn't want children", "It was a test"],
+              "correct": 1,
+              "hint": "From 'Mahabharata' album - The Curse of King Shantanu",
+              "explanation": "The children were celestial beings cursed to be born as mortals, and their fate was to be freed by their mother's hands."
+            }
+          ]
+        }
+      }
+    },
+    "greek": {
+      "name": "Greek Mythology",
+      "albums": {
+        "hercules_labors": {
+          "name": "Labors of the Titanborn",
+          "questions": [
+            {
+              "id": "gr_hl_1",
+              "question": "Which Greek hero is known for completing twelve legendary labors?",
+              "options": ["Perseus", "Theseus", "Hercules", "Achilles"],
+              "correct": 2,
+              "hint": "From 'Labors of the Titanborn' album",
+              "explanation": "Hercules (Heracles) is famous for completing the twelve labors as penance."
+            },
+            {
+              "id": "gr_hl_2",
+              "question": "What is the alternative name for Hercules in Greek mythology?",
+              "options": ["Heracles", "Herakles", "Both A and B", "Herakleitos"],
+              "correct": 2,
+              "hint": "From 'Labors of the Titanborn' album",
+              "explanation": "Hercules is the Roman name; the Greek names are Heracles or Herakles."
+            }
+          ]
+        },
+        "golden_fleece": {
+          "name": "The Golden Fleece",
+          "questions": [
+            {
+              "id": "gr_gf_1",
+              "question": "Who led the Argonauts in their quest for the Golden Fleece?",
+              "options": ["Perseus", "Jason", "Theseus", "Odysseus"],
+              "correct": 1,
+              "hint": "From 'The Golden Fleece' album",
+              "explanation": "Jason led the Argonauts on their famous quest to retrieve the Golden Fleece."
+            },
+            {
+              "id": "gr_gf_2",
+              "question": "What was the name of Jason's ship?",
+              "options": ["Argo", "Odyssey", "Trireme", "Pentekonter"],
+              "correct": 0,
+              "hint": "From 'The Golden Fleece' album",
+              "explanation": "The Argo was the ship that carried Jason and the Argonauts on their quest."
+            }
+          ]
+        },
+        "olympians": {
+          "name": "The Olympians",
+          "questions": [
+            {
+              "id": "gr_ol_1",
+              "question": "How many major Olympian gods are there in Greek mythology?",
+              "options": ["10", "12", "14", "16"],
+              "correct": 1,
+              "hint": "From 'The Olympians' album",
+              "explanation": "There are traditionally twelve major Olympian gods in Greek mythology."
+            },
+            {
+              "id": "gr_ol_2",
+              "question": "Who is the king of the Olympian gods?",
+              "options": ["Poseidon", "Hades", "Zeus", "Apollo"],
+              "correct": 2,
+              "hint": "From 'The Olympians' album",
+              "explanation": "Zeus is the king of the gods and ruler of Mount Olympus."
+            }
+          ]
+        },
+        "apple_of_ruin": {
+          "name": "The Apple of Ruin",
+          "questions": [
+            {
+              "id": "gr_ar_1",
+              "question": "The Apple of Discord was thrown by which goddess?",
+              "options": ["Hera", "Athena", "Eris", "Aphrodite"],
+              "correct": 2,
+              "hint": "From 'The Apple of Ruin' album",
+              "explanation": "Eris, the goddess of discord, threw the golden apple that started the Trojan War."
+            },
+            {
+              "id": "gr_ar_2",
+              "question": "What was written on the Apple of Discord?",
+              "options": ["For the fairest", "For the strongest", "For the wisest", "For the bravest"],
+              "correct": 0,
+              "hint": "From 'The Apple of Ruin' album",
+              "explanation": "The apple was inscribed with 'For the fairest', causing a dispute among the goddesses."
+            }
+          ]
+        }
+      }
+    },
+    "norse": {
+      "name": "Norse Mythology",
+      "albums": {
+        "odin": {
+          "name": "Wonderer of the Nine Realms",
+          "questions": [
+            {
+              "id": "no_od_1",
+              "question": "How many realms exist in Norse cosmology?",
+              "options": ["Seven", "Nine", "Twelve", "Thirteen"],
+              "correct": 1,
+              "hint": "From 'Wonderer of the Nine Realms' album",
+              "explanation": "Norse mythology describes nine realms connected by Yggdrasil, the World Tree."
+            },
+            {
+              "id": "no_od_2",
+              "question": "What is Odin's role in Norse mythology?",
+              "options": ["God of Thunder", "All-Father and ruler of Asgard", "God of the Sea", "God of War only"],
+              "correct": 1,
+              "hint": "From 'Wonderer of the Nine Realms' album",
+              "explanation": "Odin is the All-Father, the chief god and ruler of Asgard in Norse mythology."
+            },
+            {
+              "id": "no_od_3",
+              "question": "What did Odin sacrifice to gain wisdom?",
+              "options": ["His throne", "His eye", "His hammer", "His horse"],
+              "correct": 1,
+              "hint": "From 'Wonderer of the Nine Realms' album",
+              "explanation": "Odin sacrificed his eye at Mimir's well to gain wisdom and knowledge."
+            }
+          ]
+        }
+      }
+    },
+    "mesopotamian": {
+      "name": "Mesopotamian Mythology",
+      "albums": {
+        "gilgamesh": {
+          "name": "Shadows of Immortality",
+          "questions": [
+            {
+              "id": "me_gi_1",
+              "question": "Gilgamesh was the king of which ancient city?",
+              "options": ["Babylon", "Uruk", "Ur", "Nineveh"],
+              "correct": 1,
+              "hint": "From 'Shadows of Immortality' album",
+              "explanation": "Gilgamesh was the legendary king of Uruk in ancient Mesopotamia."
+            },
+            {
+              "id": "me_gi_2",
+              "question": "Who was Gilgamesh's closest friend in the epic?",
+              "options": ["Enkidu", "Utnapishtim", "Shamhat", "Humbaba"],
+              "correct": 0,
+              "hint": "From 'Shadows of Immortality' album",
+              "explanation": "Enkidu was created by the gods and became Gilgamesh's closest friend and companion."
+            }
+          ]
+        },
+        "enuma_elish": {
+          "name": "Enuma Elish",
+          "questions": [
+            {
+              "id": "me_ee_1",
+              "question": "Enuma Elish is the Mesopotamian creation myth. What does 'Enuma Elish' mean?",
+              "options": ["In the beginning", "When on high", "From the depths", "By the gods"],
+              "correct": 1,
+              "hint": "From 'Enuma Elish' album",
+              "explanation": "'Enuma Elish' means 'When on high' and are the opening words of the Babylonian creation epic."
+            },
+            {
+              "id": "me_ee_2",
+              "question": "Who is the hero god in Enuma Elish who defeats the primordial chaos?",
+              "options": ["Enlil", "Marduk", "Ea", "Anu"],
+              "correct": 1,
+              "hint": "From 'Enuma Elish' album",
+              "explanation": "Marduk defeats Tiamat (primordial chaos) and becomes king of the gods in the Enuma Elish."
+            }
+          ]
+        }
+      }
+    },
+    "celtic": {
+      "name": "Celtic Mythology",
+      "albums": {
+        "dagda": {
+          "name": "String of the Gods",
+          "questions": [
+            {
+              "id": "ce_da_1",
+              "question": "The Dagda is known as the 'Good God' in Celtic mythology. What is he particularly associated with?",
+              "options": ["War and battle", "Fertility, agriculture, and magic", "The sea and storms", "Death and the underworld"],
+              "correct": 1,
+              "hint": "From 'String of the Gods' album",
+              "explanation": "The Dagda is associated with fertility, agriculture, strength, and magic in Celtic mythology."
+            },
+            {
+              "id": "ce_da_2",
+              "question": "What magical instrument is the Dagda famous for possessing?",
+              "options": ["A sword", "A harp", "A cauldron", "Both B and C"],
+              "correct": 3,
+              "hint": "From 'String of the Gods' album",
+              "explanation": "The Dagda is famous for both his magical harp that could control emotions and seasons, and his cauldron of plenty."
+            }
+          ]
+        }
+      }
+    },
+    "roman": {
+      "name": "Roman Mythology",
+      "albums": {
+        "romulus_and_remus": {
+          "name": "Romulus and Remus",
+          "questions": [
+            {
+              "id": "ro_rr_1",
+              "question": "According to Roman legend, who raised Romulus and Remus?",
+              "options": ["A shepherd", "A wolf", "A king", "A priest"],
+              "correct": 1,
+              "hint": "From 'Romulus and Remus' album",
+              "explanation": "Romulus and Remus were raised by a she-wolf after being abandoned as infants."
+            },
+            {
+              "id": "ro_rr_2",
+              "question": "Which city did Romulus found after killing his brother Remus?",
+              "options": ["Naples", "Rome", "Florence", "Milan"],
+              "correct": 1,
+              "hint": "From 'Romulus and Remus' album",
+              "explanation": "Romulus founded Rome after killing his twin brother Remus in a dispute over the city's location."
+            }
+          ]
+        }
+      }
+    },
+    "persian": {
+      "name": "Persian Mythology",
+      "albums": {
+        "rostam": {
+          "name": "Rostam",
+          "questions": [
+            {
+              "id": "pe_ro_1",
+              "question": "Rostam is a legendary hero from which Persian epic?",
+              "options": ["Avesta", "Shahnameh", "Rubaiyat", "Masnavi"],
+              "correct": 1,
+              "hint": "From 'Rostam' album",
+              "explanation": "Rostam is the greatest hero in Ferdowsi's Shahnameh (Book of Kings), the Persian national epic."
+            },
+            {
+              "id": "pe_ro_2",
+              "question": "What is the name of Rostam's famous horse?",
+              "options": ["Rakhsh", "Shabdiz", "Duldul", "Buraq"],
+              "correct": 0,
+              "hint": "From 'Rostam' album",
+              "explanation": "Rakhsh is Rostam's legendary horse, known for its strength, speed, and loyalty."
+            }
+          ]
+        }
+      }
+    },
+    "african": {
+      "name": "African Mythology",
+      "albums": {
+        "anansi": {
+          "name": "Anansi",
+          "questions": [
+            {
+              "id": "af_an_1",
+              "question": "Anansi is a trickster figure in West African folklore. What animal is he typically depicted as?",
+              "options": ["A rabbit", "A spider", "A coyote", "A raven"],
+              "correct": 1,
+              "hint": "From 'Anansi' album",
+              "explanation": "Anansi is the spider trickster god in West African and Caribbean folklore."
+            },
+            {
+              "id": "af_an_2",
+              "question": "What is Anansi most famous for bringing to humanity?",
+              "options": ["Fire", "Stories and wisdom", "Agriculture", "Music"],
+              "correct": 1,
+              "hint": "From 'Anansi' album",
+              "explanation": "Anansi is credited with bringing stories, wisdom, and knowledge to humanity through his clever tricks."
+            }
+          ]
+        }
+      }
+    }
+  }
+} 
