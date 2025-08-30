@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mytholore - 15-Puzzle Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .game-header img {
+      width: 300px;
+      height: 112px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .game-nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .game-nav a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .game-nav a:hover {
+      color: #fff;
+    }
+
+    .game-main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      gap: 3rem;
+    }
+
+    .game-controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      min-width: 300px;
+    }
+
+    .control-section {
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid #d4af37;
+      border-radius: 15px;
+      padding: 1.5rem;
+    }
+
+    .control-section h3 {
+      color: #d4af37;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .image-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .image-option {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #666;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .image-option:hover {
+      border-color: #d4af37;
+      transform: scale(1.05);
+    }
+
+    .image-option.selected {
+      border-color: #d4af37;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .game-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-label {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    .stat-value {
+      color: #d4af37;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .game-button {
+      background: #d4af37;
+      color: #000;
+      border: none;
+      padding: 1rem 1.5rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .game-button:hover {
+      background: #b8941f;
+      transform: translateY(-2px);
+    }
+
+    .help-button {
+      background: #4a90e2;
+    }
+
+    .help-button:hover {
+      background: #357abd;
+    }
+
+    .back-button {
+      background: #666;
+      color: white;
+    }
+
+    .back-button:hover {
+      background: #555;
+    }
+
+    .puzzle-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .puzzle-container {
+      border: 3px solid #d4af37;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .puzzle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 2px;
+      width: 500px;
+      height: 500px;
+    }
+
+    .puzzle-tile {
+      background-size: 500px 500px;
+      cursor: pointer;
+      border: 1px solid #333;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .puzzle-tile:hover:not(.empty) {
+      opacity: 0.8;
+      transform: scale(0.98);
+    }
+
+    .puzzle-tile.empty {
+      background: #222;
+      cursor: default;
+    }
+
+    .win-message {
+      background: rgba(212, 175, 55, 0.95);
+      color: #000;
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 1rem 0;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+      display: none;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+    }
+
+    .help-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .help-content {
+      background: rgba(0, 0, 0, 0.9);
+      border: 3px solid #d4af37;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .help-image {
+      max-width: 400px;
+      max-height: 400px;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .close-help {
+      background: #d4af37;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 1200px) {
+      .game-main {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .game-controls-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: auto;
+      }
+
+      .control-section {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .puzzle-grid {
+        width: 400px;
+        height: 400px;
+      }
+
+      .puzzle-tile {
+        background-size: 400px 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .puzzle-grid {
+        width: 320px;
+        height: 320px;
+      }
+
+      .puzzle-tile {
+        background-size: 320px 320px;
+      }
+
+      .game-controls-panel {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game-header">
+    <img src="images/mytholore_logo.svg" alt="Mytholore Logo">
+    <div class="game-nav">
+      <a href="games.html">← Back to Games</a>
+      <a href="index.html">World Map</a>
+      <a href="albums.html">Albums</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="game-main">
+    <div class="game-controls-panel">
+      <div class="control-section">
+        <h3>Choose Image</h3>
+        <div id="image-selector" class="image-selector">
+          <!-- Images will be loaded dynamically -->
+        </div>
+      </div>
+
+      <div class="control-section">
+        <h3>Game Stats</h3>
+        <div class="game-stats">
+          <div class="stat">
+            <div class="stat-label">Moves</div>
+            <div class="stat-value" id="move-count">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Time</div>
+            <div class="stat-value" id="timer">00:00</div>
+          </div>
+        </div>
+        
+        <button class="game-button" onclick="shufflePuzzle()">New Game</button>
+        <button class="game-button help-button" onclick="showHelp()">Show Complete Image</button>
+        <button class="game-button back-button" onclick="window.location.href='games.html'">Back to Games</button>
+      </div>
+    </div>
+
+    <div class="puzzle-area">
+      <div class="win-message" id="win-message">
+        🎉 Congratulations! You solved the puzzle! 🎉
+      </div>
+      
+      <div class="puzzle-container">
+        <div id="puzzle-grid" class="puzzle-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="help-overlay" id="help-overlay" onclick="hideHelp()">
+    <div class="help-content" onclick="event.stopPropagation()">
+      <h2 style="color: #d4af37; margin-top: 0;">Complete Image</h2>
+      <img id="help-image" class="help-image" src="" alt="Complete puzzle image">
+      <br>
+      <button class="close-help" onclick="hideHelp()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    let puzzleState = [];
+    let emptyIndex = 15;
+    let moveCount = 0;
+    let startTime = null;
+    let timerInterval = null;
+    let isGameWon = false;
+    let currentImage = 'games/images/zues_lovers.png';
+    let availableImages = [];
+
+    // Available images with their display names
+    const imageInfo = {
+      'games/images/zues_lovers.png': 'Zeus & Lovers',
+      'games/images/thor.png': 'Thor',
+      'games/images/loki.png': 'Loki'
+    };
+
+    // Initialize the game
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAvailableImages();
+      initPuzzle();
+    });
+
+    // Load available images dynamically
+    function loadAvailableImages() {
+      availableImages = Object.keys(imageInfo);
+      const selector = document.getElementById('image-selector');
+      
+      availableImages.forEach((imagePath, index) => {
+        const option = document.createElement('div');
+        option.className = 'image-option';
+        if (index === 0) option.classList.add('selected');
+        option.style.backgroundImage = `url('${imagePath}')`;
+        option.title = imageInfo[imagePath];
+        option.onclick = () => selectImage(imagePath, option);
+        selector.appendChild(option);
+      });
+    }
+
+    // Select an image for the puzzle
+    function selectImage(imagePath, element) {
+      currentImage = imagePath;
+      document.querySelectorAll('.image-option').forEach(opt => opt.classList.remove('selected'));
+      element.classList.add('selected');
+      
+      // Update puzzle tiles with new image
+      const tiles = document.querySelectorAll('.puzzle-tile:not(.empty)');
+      tiles.forEach(tile => {
+        tile.style.backgroundImage = `url('${currentImage}')`;
+      });
+      
+      // Update help image
+      document.getElementById('help-image').src = currentImage;
+      
+      // Start new game with selected image
+      shufflePuzzle();
+    }
+
+    // Initialize the puzzle
+    function initPuzzle() {
+      puzzleState = Array.from({length: 16}, (_, i) => i);
+      emptyIndex = 15;
+      moveCount = 0;
+      startTime = null;
+      isGameWon = false;
+      document.getElementById('move-count').textContent = '0';
+      document.getElementById('timer').textContent = '00:00';
+      document.getElementById('win-message').style.display = 'none';
+      document.getElementById('help-image').src = currentImage;
+      
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      renderPuzzle();
+    }
+
+    // Render the puzzle grid
+    function renderPuzzle() {
+      const grid = document.getElementById('puzzle-grid');
+      grid.innerHTML = '';
+      
+      for (let i = 0; i < 16; i++) {
+        const tile = document.createElement('div');
+        tile.className = 'puzzle-tile';
+        
+        if (puzzleState[i] === 15) {
+          tile.classList.add('empty');
+          tile.style.background = '#222';
+        } else {
+          const tileNumber = puzzleState[i];
+          const row = Math.floor(tileNumber / 4);
+          const col = tileNumber % 4;
+          const tileSize = window.innerWidth <= 768 ? 320 : (window.innerWidth <= 1200 ? 400 : 500);
+          tile.style.backgroundImage = `url('${currentImage}')`;
+          tile.style.backgroundSize = `${tileSize}px ${tileSize}px`;
+          tile.style.backgroundPosition = `-${col * (tileSize/4)}px -${row * (tileSize/4)}px`;
+          tile.onclick = () => moveTile(i);
+        }
+        
+        grid.appendChild(tile);
+      }
+    }
+
+    // Check if a move is valid
+    function canMove(index) {
+      const row = Math.floor(index / 4);
+      const col = index % 4;
+      const emptyRow = Math.floor(emptyIndex / 4);
+      const emptyCol = emptyIndex % 4;
+      
+      return (Math.abs(row - emptyRow) === 1 && col === emptyCol) ||
+             (Math.abs(col - emptyCol) === 1 && row === emptyRow);
+    }
+
+    // Move a tile
+    function moveTile(index) {
+      if (isGameWon || !canMove(index)) return;
+      
+      // Start timer on first move
+      if (!startTime) {
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+      
+      // Swap tile with empty space
+      [puzzleState[index], puzzleState[emptyIndex]] = [puzzleState[emptyIndex], puzzleState[index]];
+      emptyIndex = index;
+      moveCount++;
+      
+      document.getElementById('move-count').textContent = moveCount;
+      renderPuzzle();
+      
+      // Check for win
+      if (checkWin()) {
+        isGameWon = true;
+        clearInterval(timerInterval);
+        document.getElementById('win-message').style.display = 'block';
+      }
+    }
+
+    // Check if puzzle is solved
+    function checkWin() {
+      for (let i = 0; i < 15; i++) {
+        if (puzzleState[i] !== i) return false;
+      }
+      return puzzleState[15] === 15;
+    }
+
+    // Update timer display
+    function updateTimer() {
+      if (!startTime) return;
+      const elapsed = Math.floor((Date.now() - startTime) / 1000);
+      const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+      const seconds = (elapsed % 60).toString().padStart(2, '0');
+      document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+    }
+
+    // Shuffle the puzzle
+    function shufflePuzzle() {
+      initPuzzle();
+      
+      // Perform random valid moves to shuffle
+      for (let i = 0; i < 1000; i++) {
+        const validMoves = [];
+        for (let j = 0; j < 16; j++) {
+          if (canMove(j)) validMoves.push(j);
+        }
+        if (validMoves.length > 0) {
+          const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
+          [puzzleState[randomMove], puzzleState[emptyIndex]] = [puzzleState[emptyIndex], puzzleState[randomMove]];
+          emptyIndex = randomMove;
+        }
+      }
+      
+      renderPuzzle();
+    }
+
+    // Show help overlay with complete image
+    function showHelp() {
+      document.getElementById('help-overlay').style.display = 'flex';
+    }
+
+    // Hide help overlay
+    function hideHelp() {
+      document.getElementById('help-overlay').style.display = 'none';
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', renderPuzzle);
+  </script>
+</body>
+</html> 
